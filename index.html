@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kanban</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <!-- Modal Window -->
+        <div class="modal-window" id="addTaskForm">
+          <div class="modal-window-header">
+            <div class="modal-window-title">
+              <h1>Add Task</h1>
+            </div>
+            <button
+              class="button close-modal-window-btn"
+              data-target="#addTaskForm"
+            >
+              &times;
+            </button>
+          </div>
+          <div class="new-task-form">
+            <label for="">Task Title</label>
+            <input type="text" id="taskTitle" />
+            <label for="">Task Description</label>
+            <textarea name="" id="" cols="56" rows="10"></textarea>
+            <input type="submit" id="taskSubmit" value="Create" />
+          </div>
+        </div>
+
+        <!-- Kanban board -->
+        <div class="board-container">
+          <div class="task-status-swimlane" id="defaultSwimlane">
+            <h2>No Status</h2>
+            <button id="addTaskButton" data-target-modal="#addTaskForm">
+              + Add Task
+            </button>
+            <!-- Example Default Task -->
+            <div class="task" draggable="true">
+              Fill taskboard
+              <span class="close">&times;</span>
+            </div>
+          </div>
+          <div class="task-status-swimlane">
+            <h2>To Do</h2>
+          </div>
+          <div class="task-status-swimlane">
+            <h2>In Progress</h2>
+          </div>
+          <div class="task-status-swimlane">
+            <h2>Completed</h2>
+          </div>
+        </div>
+        <div class="overlay"></div>
+      </div>
+    </main>
+  </body>
+</html>

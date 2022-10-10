@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --clr-board-background: #2d3142;
+  --clr-primary: #4f5d75;
+  --clr-accent: #ef8354;
+  --clr-button: #bfc0c0;
+  --clr-font: #ffffff;
+
+  --space-25: 0.25rem;
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-125: 1.25rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+a,
+button {
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--clr-primary);
+}
+
+.container {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin-inline: auto;
+}
+
+.board-container {
+  margin-top: var(--space-200);
+  width: 100%;
+  margin-inline: auto;
+  height: 90vh;
+  display: flex;
+  background-color: var(--clr-board-background);
+}
+
+.task-status-swimlane {
+  width: 25%;
+  background-color: var(--clr-board-background);
+  position: relative;
+  padding: 5rem 1rem;
+}
+
+.task-status-swimlane h2 {
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--clr-accent);
+  color: var(--clr-font);
+  width: 100%;
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+#addTaskButton {
+  padding: 0.5rem 1rem;
+  background-color: var(--clr-button);
+  color: var(--clr-primary);
+  outline: none;
+  border: none;
+  width: 100%;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-inline: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#addTaskButton:hover {
+  font-weight: bold;
+}
+
+#addTaskButton:active {
+  transform: scale(0.95);
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: #4f5d75;
+  color: var(--clr-font);
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 1rem 1rem;
+  padding-right: 2.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.close {
+  position: absolute;
+  right: 0.5rem;
+  font-size: 2.5rem;
+  color: var(--clr-accent);
+}
+
+.close:hover {
+  color: var(--clr-accent);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Modal Window */
+.button {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+}
+
+.close-modal-window-btn {
+  background-color: transparent;
+  border: none;
+  font-size: 3rem;
+  color: var(--clr-accent);
+}
+
+.button:active {
+  transform: scale(0.9);
+}
+
+.modal-window {
+  width: 450px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #ccc;
+  z-index: 2;
+  background-color: var(--clr-button);
+  border-radius: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
+.modal-window.active {
+  top: 50%;
+  visibility: visible;
+  opacity: 1;
+}
+
+.modal-window-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.new-task-form {
+  padding: 1rem;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.overlay.active {
+  display: block;
+}
+
+#taskTitle,
+#taskSubmit {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  margin: 0.25rem;
+}
+
+#taskSubmit {
+  background-color: var(--clr-accent);
+  color: white;
+  font-size: 1.25rem;
+  border: none;
+}
+#taskSubmit:hover {
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#taskSubmit:active {
+  transform: scale(0.95);
+}
